@@ -58,13 +58,28 @@ public class MainApp{
 	    f.add(b3);
 	    
 	    JButton b4=new JButton("Move");  
-	    b4.setBounds(50,150,95,30);    
+	    b4.setBounds(50,190,95,30);    
 	    b4.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-	        	
+	        	String s1 = jtxF.getText();
+	        	String s2 = jtxF2.getText();
+	        	FileLocal fileLocal = new FileLocal();
+	        	fileLocal.move(s1, s2); 
 	        }
 	    }); 
 	    f.add(b4);
+	   
+	    JButton b5=new JButton("Find");  
+	    b5.setBounds(150,190,95,30);    
+	    b5.addActionListener(new ActionListener(){  
+	        public void actionPerformed(ActionEvent e){  
+	        	String s1 = jtxF.getText();
+	        	String s2 = jtxF2.getText();
+	        	FileLocal fileLocal = new FileLocal();
+	        	fileLocal.lookup(s1, s2);
+	        }
+	    }); 
+	    f.add(b5);
 	   
 	    f.setSize(400,400);  
 	    f.setLayout(null);  

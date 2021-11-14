@@ -8,7 +8,7 @@ import javax.swing.*;
 import model.DirectoryLocal;
 import model.FileLocal;
 
-public class MainApp {  
+public class MainApp{  
 
 	public static void main(String[] args) {  
 	 
@@ -49,7 +49,10 @@ public class MainApp {
 	    b3.setBounds(250,150,95,30);    
 	    b3.addActionListener(new ActionListener(){  
 	        public void actionPerformed(ActionEvent e){  
-	        	
+	        	String s1 = jtxF.getText();
+	        	String s2 = jtxF2.getText();
+	        	FileLocal fileLocal = new FileLocal();
+	        	fileLocal.delete(s1, s2);  
 	        }
 	    }); 
 	    f.add(b3);

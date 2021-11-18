@@ -17,8 +17,9 @@
 		</dependency>
         <dependency>
             <groupId>projekat1-sk</groupId>
-  			<artifactId>local-sk</artifactId>
+  			<artifactId>remote-sk</artifactId>
   			<version>0.0.1-SNAPSHOT</version>
+  			<scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

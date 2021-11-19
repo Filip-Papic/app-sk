@@ -29,6 +29,7 @@ public class CommandLineApp {
 				directory.create(path, name);
 				//Paths.get(path).toFile().mkdir();
 			}
+			in.close();
 		}
 		
 		if(function.equals("delete")) {
@@ -45,7 +46,48 @@ public class CommandLineApp {
 				directory.delete(path, name);
 				//Paths.get(path).toFile().mkdir();
 			}
+			in.close();
 		}
+		
+		if(function.equals("move")) {
+			System.out.println("Unesite sta premestate: ");
+			Scanner in = new Scanner(System.in);
+			String path1 = in.nextLine();
+			System.out.println("Unesite gde premestate: ");
+			String path2 = in.nextLine();
+			System.out.println("Unesite tip: ");  // nzm
+			String type = in.nextLine();
+			if(type.equals("file")) {  
+				File file = (File) Class.forName("model.FileT").newInstance();
+				file.move(path1, path2);
+			}else if(type.equals("dir")){
+				Directory directory = (Directory) Class.forName("model.DirectoryT").newInstance();
+				directory.move(path1, path2);
+				//Paths.get(path).toFile().mkdir();
+			}
+			in.close();
+		}
+		
+		if(function.equals("createMultiple")) {
+			System.out.println("Unesite ime: ");
+			Scanner in = new Scanner(System.in);
+			String name = in.nextLine();
+			System.out.println("Unesite broj: ");
+			String amount = in.nextLine();
+			System.out.println("Unesite tip: ");
+			String type = in.nextLine();
+			if(type.equals("file")) {  
+				File file = (File) Class.forName("model.FileT").newInstance();
+				file.createMultiple(path, name, Integer.parseInt(amount));
+			}else if(type.equals("dir")){
+				Directory directory = (Directory) Class.forName("model.DirectoryT").newInstance();
+				directory.createMultiple(path, name, Integer.parseInt(amount));
+				//Paths.get(path).toFile().mkdirs();
+			}
+			in.close();
+		}
+		
+		
 		//storage.createDir("1CRHPlTATSYb6ZsbPLemASrVYC1j5LeOR", "test");
 		//storage.deleteDir("1CRHPlTATSYb6ZsbPLemASrVYC1j5LeOR", null);
 		//storage.createDir(null, "smog");

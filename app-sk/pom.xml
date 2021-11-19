@@ -17,7 +17,7 @@
 		</dependency>
         <dependency>
             <groupId>projekat1-sk</groupId>
-  			<artifactId>remote-sk</artifactId>
+  			<artifactId>local-sk</artifactId>
   			<version>0.0.1-SNAPSHOT</version>
   			<scope>runtime</scope>
         </dependency>

@@ -14,14 +14,13 @@ public class CommandLineApp {
 		
 		String function = args[0];
 		String path = args[1];
-		String name = args[2];
-		String type = args[3];
-		
-		for (String arg : args) {
-			System.out.println(arg);
-		}
 		
 		if(function.equals("create")) {
+			System.out.println("Unesite ime: ");
+			Scanner in = new Scanner(System.in);
+			String name = in.nextLine();
+			System.out.println("Unesite tip: ");
+			String type = in.nextLine();
 			if(type.equals("file")) {  
 				File file = (File) Class.forName("model.FileT").newInstance();
 				file.create(path, name);
@@ -33,6 +32,11 @@ public class CommandLineApp {
 		}
 		
 		if(function.equals("delete")) {
+			System.out.println("Unesite ime: ");
+			Scanner in = new Scanner(System.in);
+			String name = in.nextLine();
+			System.out.println("Unesite tip: ");
+			String type = in.nextLine();
 			if(type.equals("file")) {  
 				File file = (File) Class.forName("model.FileT").newInstance();
 				file.delete(path, name);

@@ -109,7 +109,53 @@ public class CommandLineApp {
 			file.lookupAllFilesWithExtension(path, ext);
 			in.close();
 		}
-		
+		if(function.equals("uploadFile")) {
+			System.out.println("Unesite ID odredista: ");
+			Scanner in = new Scanner(System.in);
+			String dest = in.nextLine();
+			System.out.println("Unesite putanju fajla: ");
+			String[] paths = in.nextLine().split(" ");
+			//String p = in.nextLine();
+			storage.uploadFile(dest, paths);
+			in.close();
+		}
+		if(function.equals("downloadFile")) {
+			System.out.println("Unesite ID fajlova koje zelite skinuti: ");
+			Scanner in = new Scanner(System.in);
+			String[] ids = in.nextLine().split(" ");
+			storage.downloadFile(ids);
+			in.close();
+		}
+		if(function.equals("listFilesInDir")) {
+			System.out.println("Uneti ID foldera: ");
+			Scanner in = new Scanner(System.in);
+			String id = in.nextLine();
+			storage.listFilesInDir(id);
+			in.close();
+		}
+		if(function.equals("listDirsInDir")) {
+			System.out.println("Uneti ID foldera: ");
+			Scanner in = new Scanner(System.in);
+			String id = in.nextLine();
+			storage.listDirsInDir(id);
+			in.close();
+		}
+		if(function.equals("findFilesByName")) {
+			System.out.println("Uneti ime: ");
+			Scanner in = new Scanner(System.in);
+			String name = in.nextLine();
+			storage.findFIlesByName(name);
+			in.close();
+		}
+		if(function.equals("listFilesByCreationDate")) {
+			System.out.println("Uneti operator: ");
+			Scanner in = new Scanner(System.in);
+			String operator = in.nextLine();
+			System.out.println("Uneti datum: ");
+			String date = in.nextLine();
+			storage.listFilesByCreationDate(operator, date);
+			in.close();
+		}
 		if(function.equals("findSort")) {
 			File file = (File) Class.forName("model.FileT").newInstance();
 			file.lookupAllFilesSortedName(path);

@@ -87,7 +87,43 @@ public class CommandLineApp {
 			in.close();
 		}
 		
+		if(function.equals("find")) {
+			System.out.println("Unesite ime: ");
+			Scanner in = new Scanner(System.in);
+			String name = in.nextLine();
+			File file = (File) Class.forName("model.FileT").newInstance();
+			file.lookup(path, name);
+			in.close();
+		}
 		
+		if(function.equals("findAllFiles")) {
+			File file = (File) Class.forName("model.FileT").newInstance();
+			file.lookupAllFilesinDir(path);
+		}
+		
+		if(function.equals("findExt")) {
+			System.out.println("Unesite extenziju: ");
+			Scanner in = new Scanner(System.in);
+			String ext = in.nextLine();
+			File file = (File) Class.forName("model.FileT").newInstance();
+			file.lookupAllFilesWithExtension(path, ext);
+			in.close();
+		}
+		
+		if(function.equals("findSort")) {
+			File file = (File) Class.forName("model.FileT").newInstance();
+			file.lookupAllFilesSortedName(path);
+		}
+		
+		if(function.equals("findSortEdit")) {
+			File file = (File) Class.forName("model.FileT").newInstance();
+			file.lookupAllFilesSortedEdit(path);
+		}
+		
+		if(function.equals("findSortDate")) {
+			File file = (File) Class.forName("model.FileT").newInstance();
+			file.lookupAllFilesSortedDate(path);
+		}
 		//storage.createDir("1CRHPlTATSYb6ZsbPLemASrVYC1j5LeOR", "test");
 		//storage.deleteDir("1CRHPlTATSYb6ZsbPLemASrVYC1j5LeOR", null);
 		//storage.createDir(null, "smog");

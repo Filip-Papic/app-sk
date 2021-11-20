@@ -113,44 +113,45 @@ public class CommandLineApp {
 			System.out.println("Unesite ID odredista: ");
 			Scanner in = new Scanner(System.in);
 			String dest = in.nextLine();
-			System.out.println("Unesite putanju fajla: ");
-			String[] paths = in.nextLine().split(" ");
+			//System.out.println("Unesite putanju fajla: ");
+			//String[] paths = in.nextLine().split(" ");
+			String[] paths = path.split(" ");
 			//String p = in.nextLine();
 			storage.uploadFile(dest, paths);
 			in.close();
 		}
 		if(function.equals("downloadFile")) {
-			System.out.println("Unesite ID fajlova koje zelite skinuti: ");
-			Scanner in = new Scanner(System.in);
-			String[] ids = in.nextLine().split(" ");
+			//System.out.println("Unesite ID fajlova koje zelite skinuti: ");
+			//Scanner in = new Scanner(System.in);
+			String[] ids = path.split(" ");
 			storage.downloadFile(ids);
-			in.close();
+			//in.close();
 		}
 		if(function.equals("listFilesInDir")) {
-			System.out.println("Uneti ID foldera: ");
-			Scanner in = new Scanner(System.in);
-			String id = in.nextLine();
-			storage.listFilesInDir(id);
-			in.close();
+			//System.out.println("Uneti ID foldera: ");
+			//Scanner in = new Scanner(System.in);
+			//String id = in.nextLine();
+			storage.listFilesInDir(path);
+			//in.close();
 		}
 		if(function.equals("listDirsInDir")) {
-			System.out.println("Uneti ID foldera: ");
-			Scanner in = new Scanner(System.in);
-			String id = in.nextLine();
-			storage.listDirsInDir(id);
-			in.close();
+			//System.out.println("Uneti ID foldera: ");
+			//Scanner in = new Scanner(System.in);
+			//String id = in.nextLine();
+			storage.listDirsInDir(path);
+			//in.close();
 		}
 		if(function.equals("findFilesByName")) {
-			System.out.println("Uneti ime: ");
-			Scanner in = new Scanner(System.in);
-			String name = in.nextLine();
-			storage.findFIlesByName(name);
-			in.close();
+			//System.out.println("Uneti ime: ");
+			//Scanner in = new Scanner(System.in);
+			//String name = in.nextLine();
+			storage.findFIlesByName(path);
+			//in.close();
 		}
 		if(function.equals("listFilesByCreationDate")) {
-			System.out.println("Uneti operator: ");
+			//System.out.println("Uneti operator: ");
 			Scanner in = new Scanner(System.in);
-			String operator = in.nextLine();
+			String operator = path;
 			System.out.println("Uneti datum: ");
 			String date = in.nextLine();
 			storage.listFilesByCreationDate(operator, date);
